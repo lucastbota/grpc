@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: employeeServiceServer
+datasources:
+  default:
+    url: jdbc:h2:mem:employeedb;DB_CLOSE_ON_EXIT=TRUE;INIT=CREATE TABLE EMPLOYEE AS SELECT * FROM CSVREAD('classpath:employee.csv')
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: drop
+        show_sql: true
+
+
+grpc:
+  server:
+    port: 6565
+    keep-alive-time: 3h
+    max-inbound-message-size: 1024

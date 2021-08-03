@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: employeeManagerApi
+kafka.bootstrap.servers: localhost:9092
+
+grpc:
+  client:
+    plaintext: true
+    max-retry-attempts: 10
+
+  channels:
+    employee-service-server:
+      address: "${GRPC_EMPLOYEE_SERVER_HOST:localhost}:${GRPC_EMPLOYEE_SERVER_PORT:6565}"
+      plaintext: true
+    payment-service-server:
+      address: "${GRPC_PAYMENT_SERVER_HOST:localhost}:${GRPC_PAYMENT_SERVER_PORT:6566}"
+      plaintext: true
+    aso-service-server:
+      address: "${GRPC_ASO_SERVER_HOST:localhost}:${GRPC_ASO_SERVER_PORT:6567}"
+      plaintext: true

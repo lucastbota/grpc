@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package models;
+
+import "google/protobuf/timestamp.proto";
+import "models/ticket.proto";
+option java_package = "org.open.ticket";
+option java_multiple_files = true;
+
+//1 - 15 -> 1 byte
+//16 - 2047 -> 2 bytes
+//19000 - 19999 - reservado
+message EventManager {
+	map<string, models.Ticket> buyers = 1;
+	google.protobuf.Timestamp purchasedAt = 2;
+}

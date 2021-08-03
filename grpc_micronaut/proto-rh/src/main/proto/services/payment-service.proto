@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package service;
+import "model/payment.proto";
+option java_multiple_files = true;
+option java_package = "br.com.rh.proto.service";
+
+service PaymentService {
+  //server side streaming
+  rpc payEmployees(model.PaymentRequest) returns (stream model.PaymentResponse);
+}

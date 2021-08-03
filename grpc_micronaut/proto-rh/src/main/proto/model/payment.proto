@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package model;
+
+option java_multiple_files = true;
+option java_package = "br.com.rh.proto";
+
+message PaymentRequest {
+  repeated int64 employeeIds = 1;
+}
+
+message PaymentResponse {
+  int64 employeeId = 1;
+  PaymentStatus status = 2;
+}
+
+enum PaymentStatus {
+  ALREADY_PAID = 0;
+  BANK_ENQUEUED = 1;
+}

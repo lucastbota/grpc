@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: examServiceServer
+
+grpc:
+  server:
+    port: 6567
+    keep-alive-time: 3h

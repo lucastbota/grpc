@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: paymentServiceServer
+
+datasources:
+  default:
+    url: jdbc:h2:mem:paymentDb;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create-drop
+        show_sql: true
+
+grpc:
+  server:
+    port: 6566
+    keep-alive-time: 3h
+    max-inbound-message-size: 2024

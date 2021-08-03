@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package models;
+
+option java_package = "org.open.ticket";
+option java_multiple_files = true;
+
+//1 - 15 -> 1 byte
+//16 - 2047 -> 2 bytes
+//19000 - 19999 - reservado
+/*V1
+message Artist {
+	string name = 1;
+	double cost = 2;
+	string agentName = 3;
+	string contact = 4;
+}*/
+
+
+/* V2
+message Artist {
+	string name = 1;
+	double cost = 2;
+	string agentName = 3;
+	string contact = 4;
+	string gender = 5;
+}*/
+
+/*V3 - Houve só a exclusão de campos.
+message Artist {
+	string name = 1;
+	double cost = 2;
+}
+*/
+
+/* V4 - Altera o nome de uma proriedade já em uso - contact -> email
+message Artist {
+	string name = 1;
+	double cost = 2;
+	string agentName = 3;
+	string email = 4;
+	string gender = 5;
+}*/
+
+/* V5 - Reserva os campos 4 e 5*/
+message Artist {
+	string name = 1;
+	double cost = 2;
+	string agentName = 3;
+	reserved 4,5;
+	reserved "contact", "gender";
+}

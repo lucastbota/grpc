@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package models.common;
+
+option java_multiple_files = true;
+option java_package = "org.open.ticket";
+
+enum EventType {
+	UNKNOW = 0;
+	HEAVY_METAL_CONCERT = 1;
+	LIVE_ACTION = 2;
+	OPERA = 3;
+}

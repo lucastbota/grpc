@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: br.com.rh
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, data, data-jpa, grpc, h2, hibernate-jpa, java, java-application, jdbc-hikari, junit, logback, maven, readme, shade, yaml]

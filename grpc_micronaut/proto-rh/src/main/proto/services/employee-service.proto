@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package service;
+import "model/employee.proto";
+option java_multiple_files = true;
+option java_package = "br.com.rh.proto.service";
+
+service EmployeeService {
+  //unary
+  rpc hire(model.EmployeeRequest) returns (model.EmployeeResponse);
+  //client side streaming
+  rpc changeUnitOrganization(stream model.ChangeUoRequest) returns (model.ChangeUoResponse);
+}
